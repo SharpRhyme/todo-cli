@@ -1,3 +1,5 @@
+import pandas as pd
+
 print("Welcome to the CLI todo list")
 
 while True:
@@ -11,14 +13,25 @@ while True:
           Enter Command: """)
     
     if command == "a":
-        pass
+        df = pd.read_csv("todo.csv")
+        
+        chore = input("\nEnter new thing to do: ")
+        df.loc[-1, "To Do"] = chore
+        df.loc[-1, "Done?"] = "No"
+        df.to_csv("todo.csv", index=False)
+                
+        print(f"\n{chore} was added to your list")
+        
     elif command == "d":
         pass
     elif command == "v":
-        pass
+        print(df.to_string())
     elif command == "c":
         pass
     elif command == "q":
+        df.to_csv("todo.csv", index=False)
         break
     else:
         print("\nInvalid Command")
+        
+        
