@@ -23,9 +23,20 @@ while True:
         print(f"\n{chore} was added to your list")
         
     elif command == "d":
-        pass
-    elif command == "v":
+        df = pd.read_csv("todo.csv")
         print(df.to_string())
+        
+        delete = input("\nEnter index of item to delete: ")
+        
+        try:
+            delete = int(delete)
+        except ValueError:
+            print("Not an integer")
+        
+    elif command == "v":
+        df = pd.read_csv("todo.csv")
+        print(df.to_string())
+        
     elif command == "c":
         pass
     elif command == "q":
