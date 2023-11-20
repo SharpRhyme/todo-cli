@@ -2,7 +2,7 @@
 
 **Description**
 
-This is a basic python application used for managing a simple to do list. It takes use of a csv file allowing items to be stored even after the program being terminated. This also allows for extra formatting to be added e.g through Microsoft Excel due to the spreadsheet format.
+This is a basic python application used for managing a simple to do list. It takes use of a csv file allowing items to be stored even after the program being terminated. This also allows for extra formatting to be added (e.g through Microsoft Excel) due to the spreadsheet format.
 
 **Usage**
 
