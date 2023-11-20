@@ -32,13 +32,29 @@ while True:
             delete = int(delete)
         except ValueError:
             print("Not an integer")
-        
+
+        df = df.drop(delete)
+
+        df.to_csv("todo.csv", index=False)
+
     elif command == "v":
         df = pd.read_csv("todo.csv")
         print(df.to_string())
         
     elif command == "c":
-        pass
+        df = pd.read_csv("todo.csv")
+        print(df.to_string())
+
+        check = input("\nEnter index of item to mark done: ")
+
+        try:
+            check = int(check)
+        except ValueError:
+            print("Not an integer")
+        df.loc[check, "Done?"] = "Yes"
+
+        df.to_csv("todo.csv", index=False)
+
     elif command == "q":
         df.to_csv("todo.csv", index=False)
         break
